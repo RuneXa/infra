@@ -102,6 +102,7 @@ export default function Switch(props: SwitchProps) {
     Animated.timing(xValue, {
       toValue: value ? 1 : 0,
       duration: 300,
+      useNativeDriver: true,
     }).start();
   }, [value, xValue]);
 
@@ -122,7 +123,7 @@ export default function Switch(props: SwitchProps) {
     >
       <Animated.View
         style={[
-          styles.thumb,
+          styles.thumb as StyleProp<ViewStyle>,
           {
             transform: [
               {

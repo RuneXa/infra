@@ -1,6 +1,8 @@
-import { Theme as PaperTheme } from 'react-native-paper';
+import { DefaultTheme as PaperDefaultTheme } from 'react-native-paper';
 
 import { Theme, Fonts, Font } from '../types';
+
+type PaperTheme = typeof PaperDefaultTheme;
 
 function getPaperFontConfig(font: Font): PaperTheme['fonts']['regular'] {
   return {

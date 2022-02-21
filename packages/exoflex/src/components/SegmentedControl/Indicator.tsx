@@ -46,7 +46,7 @@ export default function Indicator(props: Props) {
         height: 26,
         borderRadius: 4,
         backgroundColor: colors.surface,
-        overflow: 'visible',
+        overflow: 'visible' as 'visible',
         ...Platform.select({
           android: { elevation: 4 },
           default: {

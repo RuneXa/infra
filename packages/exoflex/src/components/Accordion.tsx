@@ -125,6 +125,7 @@ function Header<T extends Title>({
     initialValue: ARROW_DIRECTION.DOWN,
     toValue: isActive ? ARROW_DIRECTION.UP : ARROW_DIRECTION.DOWN,
     duration: 300,
+    useNativeDriver: true,
   });
 
   let DefaultIcon = (

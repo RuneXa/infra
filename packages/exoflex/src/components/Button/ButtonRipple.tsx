@@ -1,5 +1,5 @@
-import React from 'react';
-import { View } from 'react-native';
+import React, { Ref } from 'react';
+import { TouchableWithoutFeedback, View } from 'react-native';
 import { TouchableRipple } from 'react-native-paper';
 import Text from '../Text';
 import ActivityIndicator from '../ActivityIndicator';
@@ -27,6 +27,7 @@ export default function ButtonRipple(props: ButtonProps) {
     loading,
     icon,
     accessibilityLabel,
+    ref,
     ...otherProps
   } = props;
 
@@ -40,13 +41,11 @@ export default function ButtonRipple(props: ButtonProps) {
   return (
     <TouchableRipple
       {...otherProps}
+      ref={ref as Ref<TouchableWithoutFeedback>}
       borderless
       onPress={onPress}
       disabled={disabled}
-      accessibilityTraits={disabled ? ['button', 'disabled'] : 'button'}
-      accessibilityComponentType="button"
       accessibilityRole="button"
-      accessibilityStates={disabled ? ['disabled'] : []}
       style={[
         styles.button,
         compact && styles.compact,

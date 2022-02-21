@@ -60,6 +60,7 @@ function Collapsible({
     initialValue: -0.5,
     toValue: isCollapsed ? -0.5 : 0.5,
     duration: 300,
+    useNativeDriver: true,
   });
 
   if (isCollapsedProp) {

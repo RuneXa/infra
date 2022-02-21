@@ -1,5 +1,5 @@
 import React from 'react';
-import { Animated, StyleSheet } from 'react-native';
+import { Animated, StyleSheet, ViewStyle } from 'react-native';
 import { Badge as PaperBadge } from 'react-native-paper';
 import color from 'color';
 import Text from './Text';
@@ -25,7 +25,7 @@ export default function Badge(props: BadgeProps) {
   });
   let { colors, style: themeStyle } = useTheme();
   let { backgroundColor = colors.notification, ...restStyle } =
-    StyleSheet.flatten(style) || {};
+    StyleSheet.flatten<ViewStyle>(style) || {};
   let textColor = color(backgroundColor).isLight()
     ? colors.text
     : colors.surface;
@@ -55,7 +55,7 @@ export default function Badge(props: BadgeProps) {
           },
         ]}
         preset={textPreset}
-        testID={testID}
+        testID={testID as string}
       >
         {children}
       </Text>

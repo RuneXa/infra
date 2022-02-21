@@ -177,7 +177,6 @@ export type Colors = {
   placeholder: string;
   backdrop: string;
   onSurface: string;
-  onBackground: string;
   notification: string;
 };
 
